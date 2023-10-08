@@ -1,0 +1,198 @@
+\textwidth=\paperwidth
+\textheight=\paperheight
+
+\parindent 1.25cm
+% \linespread{1}
+
+\newlength{\tbheight}
+\newlength{\sidewidth}
+\newlength{\seplength}
+\newlength{\currentpos}
+
+\setlength{\tbheight}{1.5in}
+\setlength{\sidewidth}{2.4in}
+\setlength{\seplength}{0.3mm}
+\setlength{\currentpos}{30pt}
+
+\newcounter{blockrefcnt}
+
+\newfontfamily{\seriffont}{PT Serif}
+\newfontfamily{\serifboldfont}{PT Serif Bold}
+\newfontfamily{\lightfont}{Roboto Light}
+\newfontfamily{\medfont}{Roboto Medium}
+\newfontfamily{\boldfont}{Roboto Bold}
+\newfontfamily{\iconsfont}{IconsFont}
+
+\definecolor{sideback}{HTML}{1565C0}
+\definecolor{sidebacktop}{HTML}{184487}
+\definecolor{sidetopsep}{HTML}{09306E}
+\definecolor{sidesep}{HTML}{2C588C}
+\definecolor{graylt}{HTML}{3F3F3F}
+
+\mdfdefinestyle{MyFrame}{%
+	outermargin=0pt,
+	outerlinewidth=0pt,
+	roundcorner=0pt,
+	innertopmargin=0pt,
+	innerbottommargin=0pt,
+	innerrightmargin=0pt,
+	innerleftmargin=0pt,
+	hidealllines=true,
+}
+
+\newcommand{\titletxt}[1]{
+	\vspace{8pt}
+	{\boldfont\fontsize{14}{12}\selectfont #1}
+}
+
+\newcommand{\toptxt}[1]{
+	\vspace{5pt}
+	{\medfont\fontsize{10}{8}\selectfont #1}
+}
+
+\newcommand{\topsctxt}[1]{
+	\vspace{5pt}
+	{\lightfont\fontsize{10}{8}\selectfont #1}
+}
+
+\newcommand{\deftxt}[1]{
+	{\lightfont\fontsize{9}{7}\selectfont #1}
+}
+
+% \newcommand{\icirc}{{\fontsize{14}{12}\selectfont$\odot$}}
+% \newcommand{\icirc}{{\fontsize{10}{8}\selectfont$\mathbf\circ$}}
+\newcommand{\icirc}{{$\circledbullet$}}
+\newcommand{\vp}{\vphantom{lp}}
+
+\newcommand{\init}{
+	\thispagestyle{empty}
+	\textblockorigin{0pt}{0pt}
+	\setlength{\parindent}{0pt}
+}
+
+\newenvironment{divblock}[6]{
+
+	\begin{textblock*}{#3}(#1,#2)
+		\begin{minipage}[t][#4][t]{#3}
+			\begin{mdframed}[style=MyFrame, backgroundcolor=#5]
+				\begin{minipage}[t][#4][t]{#3}
+					\ifstrempty{#6}{}{
+						\color{#6}
+					}
+}{
+
+				\end{minipage}
+			\end{mdframed}
+		\end{minipage}
+	\end{textblock*}
+}
+
+\NewEnviron{central}{
+	\begin{center}
+		\vspace*{\fill}
+			\BODY
+		\vspace*{\fill}
+	\end{center}
+}
+
+\NewEnviron{sidebar}[2]{
+	
+	\begin{divblock}{0pt}{0pt}{\sidewidth}{\textheight}{sideback}{white}
+		
+		\vspace{\tbheight+15pt}
+		
+		\hspace{10pt}
+		\begin{minipage}[t][\textheight-\tbheight-30pt][t]{\sidewidth-20pt}
+
+			{\boldfont E-mail:} \href{mailto:#2}{#2}
+			\vspace{10pt}
+
+			\BODY
+
+		\end{minipage}
+
+	\end{divblock}
+
+	\cdivblock{0pt}{\tbheight-0.15pt}{\sidewidth}{\seplength}{sidetopsep}{white}{}
+	\cdivblock{\sidewidth}{0pt}{\seplength}{\tbheight + \seplength}{sidetopsep}{white}{}
+	\cdivblock{\sidewidth}{\tbheight + \seplength}{\seplength}{\textheight - \tbheight - \seplength}{sidesep}{white}{}
+	
+	\begin{divblock}{0pt}{0pt}{\sidewidth}{\tbheight}{sidebacktop}{}
+
+		\begin{central}
+			\includegraphics[height=1in]{#1}
+		\end{central}
+
+	\end{divblock}
+}
+
+\NewEnviron{titleblock}[4]{
+
+	\vspace{7pt}
+	\toptxt{#1} \hfill {\color{sideback}\topsctxt{#2\vphantom{1}}}
+
+	\ifstrempty{#3#4}{
+		\vspace{-6pt}
+	}{
+		\vspace*{-10pt}
+		{\color{graylt}\topsctxt{#3\vphantom{1} \hfill #4}}
+	}
+
+	\vspace{6pt}
+	\deftxt{\BODY}
+	
+}
+
+\newcommand{\savepos}{
+	\stepcounter{blockrefcnt}
+	\zsavepos{block\theblockrefcnt}
+}
+
+\newcommand{\getposy}{
+	\paperheight-\dimexpr\zposy{block\theblockrefcnt}sp-10pt
+}
+
+\NewEnviron{centralpart}[3]{
+
+	\begin{divblock}{\sidewidth+25pt}{\currentpos}{\paperwidth-\sidewidth-50pt}{\textheight-\currentpos-60pt}{white}{black}
+		
+		\ifstrempty{#1}{}{
+			\vspace{5pt}
+			\hspace{25pt} {\color{sidebacktop}\medfont\fontsize{14}{12}\selectfont #1}
+		}
+
+		\BODY
+
+		\ifstrempty{#3}{
+			\vspace{5pt}
+			{\color{sideback}\rule{\textwidth}{0.5pt}}
+		}{}
+	
+		\savepos
+
+	\end{divblock}
+
+	\ifstrempty{#1}{}{
+		\begin{textblock*}{30pt}(\sidewidth+25pt,\currentpos)
+			{\color{sidebacktop}\iconsfont\fontsize{26}{26}\selectfont #2}
+		\end{textblock*}
+	}
+}
+
+\newcommand{\cdivblock}[7]{
+	\begin{divblock}{#1}{#2}{#3}{#4}{#5}{#6}
+		#7
+	\end{divblock}
+}
+
+\newcommand{\signature}[1]{
+	\begin{textblock*}{\paperwidth-40pt}(\paperwidth-40pt,\paperheight-40pt)
+		{\color{sidebacktop}\iconsfont\fontsize{30}{26}\selectfont #1}
+	\end{textblock*}
+}
+
+\newcommand{\bottomtext}[1]{
+	\begin{textblock*}{\paperwidth-\sidewidth-60pt}(\sidewidth+10pt,\paperheight-15pt)
+		{\color{sideback}\lightfont\fontsize{8}{6}\selectfont #1}
+	\end{textblock*}
+}
