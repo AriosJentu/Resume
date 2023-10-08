@@ -23,11 +23,17 @@
 \newfontfamily{\boldfont}{Roboto Bold}
 \newfontfamily{\iconsfont}{IconsFont}
 
-\definecolor{sideback}{HTML}{1565C0}
-\definecolor{sidebacktop}{HTML}{184487}
-\definecolor{sidetopsep}{HTML}{09306E}
-\definecolor{sidesep}{HTML}{2C588C}
-\definecolor{graylt}{HTML}{3F3F3F}
+% \definecolor{sideback}{HTML}{1565C0}
+% \definecolor{sidebacktop}{HTML}{184487}
+% \definecolor{sidetopsep}{HTML}{09306E}
+% \definecolor{sidesep}{HTML}{2C588C}
+% \definecolor{graylt}{HTML}{3F3F3F}
+
+\definecolor{sideback}{HTML}{673AB7}
+\definecolor{sidebacktop}{HTML}{512DA8}
+\definecolor{sidetopsep}{HTML}{4527A0}
+\definecolor{sidesep}{HTML}{5E35B1}
+\definecolor{graylt}{HTML}{4F4F4F}
 
 \mdfdefinestyle{MyFrame}{%
 	outermargin=0pt,
@@ -135,12 +141,16 @@
 		\vspace{-6pt}
 	}{
 		\vspace*{-10pt}
-		{\color{graylt}\topsctxt{#3\vphantom{1} \hfill #4}}
+		{\color{graylt}\topsctxt{#3\vphantom{1} \hfill \color{sidebacktop} #4}}
 	}
 
 	\vspace{6pt}
 	\deftxt{\BODY}
 	
+}
+
+\NewEnviron{additionalblock}[1]{
+	\toptxt{\color{graylt}#1:}\deftxt{\BODY}
 }
 
 \newcommand{\savepos}{
@@ -187,7 +197,7 @@
 
 \newcommand{\signature}[1]{
 	\begin{textblock*}{\paperwidth-40pt}(\paperwidth-40pt,\paperheight-40pt)
-		{\color{sidebacktop}\iconsfont\fontsize{30}{26}\selectfont #1}
+		{\color{sidebacktop}\iconsfont\fontsize{34}{28}\selectfont #1}
 	\end{textblock*}
 }
 
