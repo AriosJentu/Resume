@@ -1,0 +1,209 @@
+\documentclass[10pt]{extarticle}
+\usepackage{styles/packages}
+\usepackage{styles/style}
+
+\begin{document}
+	
+	\init
+
+	\begin{sidebar}{images/logo.pdf}{darthpoezd@gmail.com}
+
+		\hfill
+		{
+			\iconsfont\fontsize{20}{18}\selectfont
+			\href{https://t.me/AriosJentu}{T}
+			\href{https://github.com/AriosJentu}{G}
+			\href{https://AriosJentu.artstation.com/}{A}
+		}
+
+		\titletxt{Skills}
+
+		\toptxt{Hard-Skills}
+
+		\deftxt{
+			\begin{itemize}[label=\icirc]
+				\itemindent=-15pt
+				\item Python -- Django, Flask
+				\item JavaScript -- NodeJS, React, Vue
+				\item SQL -- SQLite, MySQL, \\NoSQL (MongoDB)
+				\item Qt -- C++, QML
+				\item TeX -- LaTeX, XeLaTeX
+				\item Unix -- Linux, macOS
+				\item git
+				\item Figma/Inkscape
+				\item 3D Design -- Blender
+			\end{itemize}
+		}
+
+		\toptxt{Soft-Skills}
+
+		\deftxt{
+			\begin{itemize}[label=\icirc]
+				\itemindent=-15pt
+				\item Communication \vp
+				\item Adaptability \vp
+				\item Creativity \vp
+				\item Teamwork \vp
+				\item Work ethic \vp
+				\item Attention to detail \vp
+			\end{itemize}
+		}
+
+		\toptxt{Languages}
+
+		\deftxt{
+			\begin{itemize}[label=\icirc]
+				\itemindent=-15pt
+				\item \textbf{Russian} -- Native \vp
+				\item \textbf{English} -- B2 \vp
+				\begin{itemize}[label=]
+					\itemindent=-35pt
+					\item EF SET Quick Check -- 86/100
+					\item EF SET -- 56/100
+				\end{itemize}
+			\end{itemize}
+		}
+
+	\end{sidebar}
+
+	\begin{centralpart}{Pavel Maksimov}{P}{}
+		\begin{titleblock}{About}{}{}{}
+			\hspace{15pt} I'm 25 y.o. Software Engineer. My journey in development began in 2012, when I interested in developing scripts for \textit{GTA San Andreas} servers (\textit{SA-MP}, then \textit{Multi Theft Auto}), and was actively involved in the creative processes. Based on the resource architecture for \textit{MTA}, I first became familiar with the \textit{client-server architecture}, and then learn basics of \textit{OOP} using examples of \textit{Lua metatables}. Since 2016, I have been actively developing projects in \textit{Python}. Also, I participate in \textit{contributing code to open-source projects} in various languages, including C/C++, C\# and Java. An active Linux user since 2012, I follow the development of technologies in this area. Hobby -- 3D modeling.
+		\end{titleblock}
+
+		\begin{titleblock}{Interests}{}{}{}
+			\hspace{15pt} Game-Development, Data Engineering, Software Architecture, Mobile Platforms, Linux
+		\end{titleblock}
+
+	\end{centralpart}
+
+	\UpdatePosition
+	
+	\begin{centralpart}{Work Experience}{J}{t}
+
+		\begin{titleblock}{University teacher}{2019-2023}{Far Eastern Federal University}{}
+			\begin{itemize}[label=$\circ$]
+				\item Developed my own course on Computer Graphics, the main task of which is to develop a simple 3D visualization engine based on analytical geometry using OOP paradigms.
+				\item I have been teaching a course on differential equations for 4 years. A lot of teaching methodologies and software solutions have been developed in this area.
+			\end{itemize}
+		\end{titleblock}
+
+		\begin{additionalblock}{Achievements}
+			Certificates of contribution to the development of the educational processes and scientific activities.
+		\end{additionalblock}
+
+		\begin{titleblock}{Database Developer}{2023}{FE CRC (ГРЦ ДВ)}{}
+			\begin{itemize}[label=$\circ$]
+				\item Design and creation of a database for recording residential premises in accordance with the documents of the developer and realtor for internal purposes.
+				\item Development of software for transferring data from Excel format to a database according to specified patterns on Python.
+				\item Development of an internal product for connecting the database with Yandex DataLens visualization.
+			\end{itemize}
+		\end{titleblock}
+
+		\begin{additionalblock}{Achievements}
+			Gained experience in design and developing a database for industrial tasks with more than 1M rows dataset.
+		\end{additionalblock}
+
+		\begin{titleblock}{Software Engineer \& 3D Visualizer}{2018-2021}{4A IT Khabarovsk}{\href{https://4ait.ru/}{Link (clickable)}}
+			\begin{itemize}[label=$\circ$]
+				\item Developed frontend-based interfaces on Vue for the Web version of main CRM project.
+				\item Build tools using Python to automate generating and monitoring processes for internal projects.
+				\item Developed concepts for enterprise equipment and environment for visualization purposes.
+			\end{itemize}
+		\end{titleblock}
+
+		\begin{additionalblock}{Achievements}
+			Developed the main design elements of the company's main software product, gained experience in commercial development in a team. Systems for automating user registration on MikroTik RouterOS servers have been developed. Created automatic map generator on patterns for internal game project.
+		\end{additionalblock}
+
+	\end{centralpart}
+
+	\BottomSignature
+
+	\NewPage
+	\ApplyNoSideBar
+	\DrawSimpleSideBar
+
+	\begin{centralpart}{Projects}{F}{t}
+
+		\begin{titleblock}{Testing Document Generator (Python)}{2021-Current}{Project for educational purposes}{\href{https://github.com/AriosJentu/TestingDocumentGenerator}{GitHub Link (clickable)}}
+			\hspace{15pt} I am developing and supporting this project for the teaching community. It presents an algorithm for assembling various tasks into a document for a certain list of students in such a way that the tasks are not repeated. Can collect documents of any user-specified format. In everyday work it's used to assemble LaTeX documents. An example of a module for this project is an {\color{sidetopsep}\href{https://github.com/AriosJentu/AnalyticGeometryTasks}{Analytical Geometry module (Clickable)}}, but also exist for Differential Equations course (closed to students). Wiki documentation is also available on project's GitHub page.
+		\end{titleblock}
+
+		\begin{titleblock}{Python OpenGL Visualizer}{2019}{Project for educational purposes}{\href{https://github.com/AriosJentu/PyOpenGLVisualizer}{GitHub Link (clickable)}}
+			\hspace{15pt} A simple project commissioned by the developer of the CATS testing system for visualizing \textit{\color{sidetopsep}.obj} format models and pixel-by-pixel comparison of the result with the original object. Used in testing 3D modeling tasks before implementing the \textit{Blender} project in CATS totally.
+		\end{titleblock}
+
+		\begin{titleblock}{Android Calendar (Qt)}{2019}{Educational project}{\href{https://github.com/AriosJentu/QTCalendar}{GitHub Link (clickable)}}
+			\hspace{15pt} This project was written as part of a training course on Android development. I studied Qt, used the \textit{Open Street Maps} API, \textit{Google Firebase} for authorization on the server where the calendar stored user events. 
+		\end{titleblock}
+
+		\begin{titleblock}{Python DBMS}{2018}{Educational project}{\href{https://github.com/AriosJentu/PyDBMS}{GitHub Link (clickable)}}
+			\hspace{15pt} This project provides a DBMS for data storage on Python. The main logic for data storage, the NoSQL interface, and the ability to write SQL queries were thought out. For this purpose, a lexer and a query parser were written using Yacc. 
+		\end{titleblock}
+
+		\begin{titleblock}{Custom GUI Widget System (Lua)}{2017-2018}{Personal Project}{\href{https://github.com/AriosJentu/LuaWinSys}{GitHub Link (Clickable)}}
+			\hspace{15pt} In my own interests, I wrote my own GUI design API as a script, based on CEGUI. You can find out more by following the {\color{sidetopsep}\href{https://forum.multitheftauto.com/topic/103782-rel-custom-gui-widget-system/}{link to the MTA forums (Clickable)}}. There is also a {\color{sidetopsep}\href{https://wiki.multitheftauto.com/wiki/Resource:CustomWidgets}{Wiki page (Clickable)}}. The project contains all available in MTA graphic objects, such as buttons, tab menus, grid lists, etc. One of the main features -- it can change themes in-game for all available windows uniformally. Images and videos are present on the forum and on Wiki page.
+		\end{titleblock}
+
+		\begin{titleblock}{Lunix Phone Green (Lua)}{2016-2017}{Personal Project}{\href{https://forum.multitheftauto.com/topic/98121-rel-lunix-phone-green-smartphone/}{MTA SA Forums (Clickable)}}
+			\hspace{15pt} This project was interesting to me from the design and functionality side. A full-fledged interface and API was written for developing your own applications for this smartphone. Several basic applications were written for it in the original style, and an automatic update system was introduced through the GitHub repository. A demonstration of the capabilities is {\color{sidetopsep}\href{https://www.youtube.com/watch?v=4JuOIe_UCJY&ab_channel=AriosJentu}{available on YouTube (Clickable)}}.
+		\end{titleblock}
+
+	\end{centralpart}
+
+	\BottomSignature
+	\NewPage
+	\DrawSimpleSideBar
+
+	\begin{centralpart}{Contributions}{C}{}
+		\begin{titleblock}{Xonotic}{2019-Current}{Fast paced first person shooter}{\href{https://gitlab.com/xonotic}{GitLab (Clickable)}}
+			\hspace{15pt} I participate in the development of one of my favorite open-source games -- I fix bugs, add features, develop maps. One of the latest commits is a fix for item respawn timers.
+		\end{titleblock}
+		
+		\begin{titleblock}{osu!lazer}{2021}{Free-to-win rhytm game}{\href{https://github.com/ppy/osu}{GitHub (Clickable)}}
+			\hspace{15pt} Participation in the development of some interface details.
+		\end{titleblock}
+		
+		\begin{titleblock}{tuijam}{2019-2020}{TUI for Google Play Music}{\href{https://github.com/AriosJentu/tuijam}{GitHub (Clickable)}}
+			\hspace{15pt} Interested in developing interfaces for Linux, and since I've used i3wm on the weak hardware, TUI was the best choice to use.
+		\end{titleblock}
+	\end{centralpart}
+
+
+	\UpdatePosition
+	\begin{centralpart}{Educations}{E}{}
+		\begin{titleblock}{Far Eastern Federal University}{2016-2020}{Bachelor of Applied Mathematics and Informatics}{}
+			Specialization: Software Engineer and Applied Mathematician.
+		\end{titleblock}
+		\begin{titleblock}{Far Eastern Federal University}{2020-2022}{Master of Applied Mathematics and Informatics}{}
+			Specialization: Numerical analysis and modeling of physical processes.
+		\end{titleblock}
+	\end{centralpart}
+
+	\UpdatePosition
+	\begin{centralpart}{Links}{L}{t}
+		\begin{titleblock}{}{}{}{}
+			\vspace*{-25pt}
+			\begin{itemize}[label=$\circ$]
+				\item Telegram: {\color{sidetopsep}\href{https://t.me/AriosJentu}{https://t.me/AriosJentu}} \vp
+				\item GitHub: {\color{sidetopsep}\href{https://github.com/AriosJentu}{https://github.com/AriosJentu}} \vp
+				\item ArtStation: {\color{sidetopsep}\href{https://AriosJentu.artstation.com/}{https://ariosjentu.artstation.com}} \vp
+			\end{itemize}
+		\end{titleblock}
+	\end{centralpart}
+
+	% \UpdatePosition
+	% \begin{centralpart}{}{}{t}
+	% 	\begin{titleblock}{Wishes}{}{}{}
+	% 		\vspace*{-8pt}
+	% 		\begin{itemize}[label=$\circ$]
+	% 			\item Relocation
+	% 			\item Payment in crypto
+	% 		\end{itemize}
+	% 	\end{titleblock}
+	% \end{centralpart}
+
+	\BottomSignature
+
+\end{document}
