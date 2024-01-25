@@ -6,11 +6,13 @@
 
 \newlength{\tbheight}
 \newlength{\sidewidth}
+\newlength{\simplesidewidth}
 \newlength{\seplength}
 \newlength{\currentpos}
 
 \setlength{\tbheight}{1.5in}
 \setlength{\sidewidth}{2.4in}
+\setlength{\simplesidewidth}{0.8in}
 \setlength{\seplength}{0.3mm}
 \setlength{\currentpos}{30pt}
 
@@ -62,7 +64,8 @@
 }
 
 \newcommand{\deftxt}[1]{
-	{\lightfont\fontsize{9}{7}\selectfont #1}
+	% {\lightfont\fontsize{9}{7}\selectfont #1}
+	{\lightfont\fontsize{10}{8}\selectfont #1}
 }
 
 % \newcommand{\icirc}{{\fontsize{14}{12}\selectfont$\odot$}}
@@ -126,10 +129,15 @@
 	\begin{divblock}{0pt}{0pt}{\sidewidth}{\tbheight}{sidebacktop}{}
 
 		\begin{central}
-			\includegraphics[height=1in]{#1}
+			\includegraphics[height=1.3in]{#1}
 		\end{central}
 
 	\end{divblock}
+}
+
+\newcommand{\DrawSimpleSideBar}{
+	\cdivblock{0pt}{0pt}{\simplesidewidth}{\textheight}{sideback}{white}{}
+	\cdivblock{\simplesidewidth}{0pt}{\seplength}{\textheight}{sidesep}{white}{}
 }
 
 \NewEnviron{titleblock}[4]{
@@ -205,4 +213,25 @@
 	\begin{textblock*}{\paperwidth-\sidewidth-60pt}(\sidewidth+10pt,\paperheight-15pt)
 		{\color{sideback}\lightfont\fontsize{8}{6}\selectfont #1}
 	\end{textblock*}
+}
+
+\newcommand{\NewPage}{
+	\hspace{1pt}
+	\newpage
+	\setlength{\currentpos}{50pt}
+}
+
+\newcommand{\UpdatePosition}{
+	\setlength{\currentpos}{\getposy+5pt}
+}
+
+\newcommand{\ApplyNoSideBar}{
+	\setlength{\sidewidth}{\simplesidewidth}
+}
+\newcommand{\ApplySideBar}{
+	\setlength{\sidewidth}{2.4in}
+}
+\newcommand{\BottomSignature}{
+	\signature{S}
+	\bottomtext{This document was designed in XeLaTeX: \color{sidetopsep}\href{https://github.com/AriosJentu/Resume}{GitHub}}
 }
