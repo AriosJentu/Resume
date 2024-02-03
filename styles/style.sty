@@ -50,22 +50,22 @@
 
 \newcommand{\titletxt}[1]{
 	\vspace{8pt}
-	{\boldfont\fontsize{14}{12}\selectfont #1}
+	{\boldfont\fontsize{14}{13}\selectfont #1}
 }
 
 \newcommand{\toptxt}[1]{
 	\vspace{5pt}
-	{\medfont\fontsize{10}{8}\selectfont #1}
+	{\medfont\fontsize{10}{9}\selectfont #1}
 }
 
 \newcommand{\topsctxt}[1]{
 	\vspace{5pt}
-	{\lightfont\fontsize{10}{8}\selectfont #1}
+	{\lightfont\fontsize{10}{9}\selectfont #1}
 }
 
 \newcommand{\deftxt}[1]{
 	% {\lightfont\fontsize{9}{7}\selectfont #1}
-	{\lightfont\fontsize{10}{8}\selectfont #1}
+	{\lightfont\fontsize{10}{13}\selectfont #1}
 }
 
 % \newcommand{\icirc}{{\fontsize{14}{12}\selectfont$\odot$}}
@@ -143,7 +143,7 @@
 \NewEnviron{titleblock}[4]{
 
 	\vspace{7pt}
-	\toptxt{#1} \hfill {\color{sideback}\topsctxt{#2\vphantom{1}}}
+	\toptxt{\color{sidesep}#1} \hfill {\color{sideback}\topsctxt{#2\vphantom{1}}}
 
 	\ifstrempty{#3#4}{
 		\vspace{-6pt}
